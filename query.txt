@@ -1,0 +1,56 @@
+// get list Category 
+{
+  getCategories{
+    code,
+    name,
+    products{
+      code,name
+    }
+  }
+}
+// get list Product
+ {
+  getProduct{
+    id,
+    code,
+    name,
+    category {
+      code,
+      name
+    }
+  }
+}
+
+// detail Products
+{
+  detailProduct(id : 1){
+    code,
+    name,
+    category {
+      code,
+      name,
+      createdAt,
+      updatedAt
+    }
+  }
+}
+
+
+// create Product
+mutation createProduct($data : InputProduct!){
+
+    createProduct(data : $data){
+    code,
+    name
+  }
+  
+}
+
+
+{
+  "data": {
+    "name": "product2",
+    "code": "product2",
+    "categoryId": 1
+  }
+}
